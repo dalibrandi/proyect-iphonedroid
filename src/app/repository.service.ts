@@ -22,17 +22,7 @@ export class RepositoryService {
     return this.http.get<DetailsRepository>("https://api.github.com/repositories/"+id, { observe: 'response' })
   }
 
-  getRepository(repo:string): Observable<HttpResponse<Owner[]>>{
+  getContributors(repo:string): Observable<HttpResponse<Owner[]>>{
     return this.http.get<Owner[]>("https://api.github.com/repos/"+repo+"/contributors", { observe: 'response' })
   }
-
-  getContributors(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.repositoryService.getContributors(id)
-      .subscribe(resp => {
-              this.contributors = resp.body;
-          }
-      );
-  }
-  https://api.github.com/repos/mojombo/god/contributors
 }

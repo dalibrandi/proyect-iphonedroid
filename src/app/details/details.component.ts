@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { Owner } from '../owner';
 import { DetailsRepository } from '../detailsRepository';
 import { RepositoryService } from '../repository.service';
-import { Owner } from '../owner.service';
 
 @Component({
   selector: 'app-details',
