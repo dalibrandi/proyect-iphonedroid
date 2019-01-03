@@ -1,0 +1,24 @@
+.container, app-cards {
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.ia_repositories {
+  background-color: #f3f3f3;
+  padding: 0 20px;
+}
+
+.ia_ico_search{
+  background-image: url("/assets/images/buscar.png");
+  height: 36px;
+  width: 36px;
+  right: 20px;
+  position: absolute;
+}
+
+@media (min-width: 576px){
+  .ia_repositories {
+    padding: 0 15px;
+  }
+}

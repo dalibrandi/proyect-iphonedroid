@@ -1,0 +1,42 @@
+.logo {
+  height: 45px;
+}
+
+.mat-toolbar {
+  height: 72px;
+  padding: 0 20px;
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(239,239,239,1)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef', GradientType=0 );
+  border-bottom: solid 2px #E86313;
+}
+
+.ai_btn {
+  background: none;
+  border: 1px solid #E86313;
+  color: #E86313;
+  border-radius: 25px;
+  font-size: 14px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: bold;
+  padding: 0 15px;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 599px){
+  .mat-toolbar {
+    height: 60px;
+  }
+
+  .ai_btn {
+    padding: 0px;
+    border: 0px solid #E86313;
+  }
+}

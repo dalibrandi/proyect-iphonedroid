@@ -1,0 +1,32 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  font-family: Montserrat, Arial, sans-serif;
+  margin: 0;
+  color: #646464;
+}
+
+h1 {
+  font-size: 24px;
+  color: #000000;
+  font-weight: 700;
+  margin: 0px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #E86313;
+  font-weight: 400;
+}
+
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
