@@ -9,8 +9,8 @@ import { RepositoryService } from '../repository.service';
   styleUrls: ['./cards.component.css'],
   template: `
      <ngx-masonry>
-       <ngxMasonryItem class="masonry-item ia_repository" *ngFor="let repository of repositories">
-         <a routerLink="/details/{{repository.id}}"><span class="ia_ico_details"></span></a>
+       <ngxMasonryItem class="masonry-item ia_repository" *ngFor="let repository of repositories" routerLink="/details/{{repository.id}}">
+         <a routerLink="{{repository.html_url}}"><span class="ia_ico_details"></span></a>
          <img class="ia_avatar" src="{{repository.owner.avatar_url}}" alt="{{repository.owner.login}}"/>
          <div class="ia_card">
            <div class="ia_name">{{repository.name}}</div>
@@ -24,7 +24,7 @@ import { RepositoryService } from '../repository.service';
 
 export class CardsComponent implements OnInit {
   repositories: Repository[];
-  nextUrl: string = "https://api.github.com/repositories";
+  nextUrl: string = "https://api.github.com/repositories?access_token=95d2ac367d0f467e9ee7fe1bdb0464e5ceaadd29";
 
   constructor(private repositoryService: RepositoryService) { }
 
@@ -40,7 +40,7 @@ export class CardsComponent implements OnInit {
   }
 
   getRepositories(): void {
-    this.repositoryService.getRepositories(this.nextUrl)
+    this.repositoryService.getRepositories(this.nextUrl+"&access_token=95d2ac367d0f467e9ee7fe1bdb0464e5ceaadd29")
     .subscribe(resp => {
           var link = resp.headers.get("link");
           this.nextUrl = link.split(';')[0].substring(1, link.split(';')[0].length-1);
@@ -50,6 +50,5 @@ export class CardsComponent implements OnInit {
             this.repositories = this.repositories.concat(resp.body);
           }
         });
-
   }
 }

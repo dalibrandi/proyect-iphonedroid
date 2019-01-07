@@ -19,10 +19,15 @@ export class RepositoryService {
   }
 
   getRepository(id:number): Observable<HttpResponse<DetailsRepository>>{
-    return this.http.get<DetailsRepository>("https://api.github.com/repositories/"+id, { observe: 'response' })
+    return this.http.get<DetailsRepository>("https://api.github.com/repositories/"+id+"&access_token=95d2ac367d0f467e9ee7fe1bdb0464e5ceaadd29", { observe: 'response' })
   }
 
   getContributors(repo:string): Observable<HttpResponse<Owner[]>>{
-    return this.http.get<Owner[]>("https://api.github.com/repos/"+repo+"/contributors", { observe: 'response' })
+    return this.http.get<Owner[]>("https://api.github.com/repos/"+repo+"/contributors&access_token=95d2ac367d0f467e9ee7fe1bdb0464e5ceaadd29", { observe: 'response' })
   }
+
+  getRepositoriesSearch(url:string): Observable<HttpResponse<Repository[]>>{
+    return this.http.get<Repository[]>(url+"&access_token=95d2ac367d0f467e9ee7fe1bdb0464e5ceaadd29", { observe: 'response' })
+  }
+
 }

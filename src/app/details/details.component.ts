@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 import { Owner } from '../owner';
 import { DetailsRepository } from '../detailsRepository';
@@ -13,13 +14,17 @@ import { RepositoryService } from '../repository.service';
 export class DetailsComponent implements OnInit {
   detailsRepository: DetailsRepository;
   contributors: Owner[];
+
   constructor(
     private route: ActivatedRoute,
-	  private repositoryService: RepositoryService
+	  private repositoryService: RepositoryService,
+    private datePipe: DatePipe
   ) { }
 
   ngOnInit() {
     this.getRepository();
+
+
   }
 
   getRepository(): void {
@@ -27,6 +32,8 @@ export class DetailsComponent implements OnInit {
     this.repositoryService.getRepository(id)
       .subscribe(resp => {
               this.detailsRepository = resp.body;
+              this.detailsRepository.updated_at = this.datePipe.transform(this.detailsRepository.updated_at,"dd/MM/yyyy");
+              this.getContributors();
           }
       );
   }

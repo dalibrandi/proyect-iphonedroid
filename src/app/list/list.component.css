@@ -17,8 +17,101 @@
   position: absolute;
 }
 
+.ia_form{
+  position: absolute;
+  top: 92px;
+  height: 36px;
+  width: calc(100% - 40px);
+}
+
+.ia_form input{
+  width: 100%;
+  border: 2px solid #E86313;
+  border-radius: 5px;
+  height: 36px;
+  padding: 10px;
+  font-size: 12px;
+  outline: none;
+}
+
+.ia_form img{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+
 @media (min-width: 576px){
   .ia_repositories {
     padding: 0 15px;
   }
+}
+
+
+.ia_repository {
+  background-color: #ffffff;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.ia_ico_details{
+  background-image: url("/assets/images/url_exterior.png");
+  height: 24px;
+  width: 24px;
+  right: 10px;
+  position: absolute;
+}
+
+.ia_repository .ia_name{
+  font-size: 24px;
+  color: #E86313;
+  font-weight: 400;
+  padding-right: 24px;
+  font-weight: 700;
+}
+
+.ia_repository .ia_owner{
+  color: #000000;
+  font-weight: 700;
+}
+
+.ia_repository .ia_avatar{
+  width: 48px;
+  height: 48px;
+  border-radius: 25px;
+  float: left;
+}
+
+.ia_repository .ia_card{
+  float: left;
+  width: Calc(100% - 68px);
+  margin-left: 10px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.ia_repository .ia_description{
+  margin-top: 10px;
+}
+
+.masonry-item {
+  width: 100%;
+}
+
+@media (min-width: 576px){
+  .masonry-item {
+    width: Calc(50% - 5px);
+    margin-left: 5px;
+  }
+}
+
+ngx-masonry, #ia_list, #ia_search {
+    width:100%;
+}
+
+ngxMasonryItem:focus, ngxMasonryItem:hover
+{
+    outline:#E86313 auto 5px;
+    outline-style: auto;
+    outline-width: 5px;
 }

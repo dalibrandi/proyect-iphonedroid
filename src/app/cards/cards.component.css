@@ -18,10 +18,12 @@
   color: #E86313;
   font-weight: 400;
   padding-right: 24px;
+  font-weight: 700;
 }
 
 .ia_repository .ia_owner{
   color: #000000;
+  font-weight: 700;
 }
 
 .ia_repository .ia_avatar{
@@ -43,13 +45,22 @@
   margin-top: 10px;
 }
 
-.masonry-item {
+.masonry-item, ngx-masonry {
   width: 100%;
 }
+
+
 
 @media (min-width: 576px){
   .masonry-item {
     width: Calc(50% - 5px);
     margin-left: 5px;
   }
+}
+
+ngxMasonryItem:focus, ngxMasonryItem:hover
+{
+    outline:#E86313 auto 5px;
+    outline-style: auto;
+    outline-width: 5px;
 }

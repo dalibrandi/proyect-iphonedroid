@@ -1,1 +1,32 @@
-{{detailsRepository.name}}
+<div class="container">
+  <div class="row ia_detailsRepository">
+    <img class="ia_avatar" src="{{detailsRepository.owner.avatar_url}}" alt="{{detailsRepository.owner.login}}"/>
+    <div class="ia_card">
+      <div class="ia_name">{{detailsRepository.name}}<a href="{{detailsRepository.html_url}}"><span class="ia_ico_details"></span></a></div>
+      <div class="ia_owner">{{detailsRepository.owner.login}}</div>
+      <div class="ia_description">{{detailsRepository.description}}</div>
+      <div class="ia_row_icons">
+        <div><div class="ia_detail_ico"><img src="/assets/images/detalle_ojo.png" alt="detalle_ojo"/></div>{{detailsRepository.watchers}}</div>
+        <div><div class="ia_detail_ico"><img src="/assets/images/detalle_tridente.png" alt="detalle_ojo"/></div>{{detailsRepository.forks}}</div>
+        <div><div class="ia_detail_ico"><img src="/assets/images/detalle_incidencia.png" alt="detalle_ojo"/></div>{{detailsRepository.open_issues}}</div>
+        <div><div class="ia_detail_ico"><img src="/assets/images/detalle_estrella.png" alt="detalle_ojo"/></div>{{detailsRepository.stargazers_count}}</div>
+      </div>
+    </div>
+    <div class="ia_moreInfo">
+      <div>Built by:
+        <div class="ia_info_avatar">
+          <img src="{{contributor.avatar_url}}" alt="{{contributor.login}}" *ngFor="let contributor of contributors | slice:0:10; let i=index"/>
+        </div>
+      </div>
+      <div>Built in:
+        <div class="ia_info">{{detailsRepository.language}}</div>
+      </div>
+      <div>License:
+        <div class="ia_info">{{detailsRepository.license.name}}</div>
+      </div>
+      <div>Last actualization:
+        <div class="ia_info">{{detailsRepository.updated_at}}</div>
+      </div>
+    </div>
+  </div>
+</div>

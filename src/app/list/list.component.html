@@ -1,6 +1,28 @@
-<h1>Listado <a href="#"><span class="ia_ico_search"></span></a></h1>
+<h1>Listado <span class="ia_ico_search" (click)="openSearch()"></span>
+
+  <div class="ia_form" style="display:none">
+    <input id="input_search" type="text" placeholder="Buscar..." [(ngModel)]="valueSearch" (keyup)="searchRepository()"/>
+    <img src="/assets/images/cerrar.png" alt="Cerrar" (click)="closeSearch()"/>
+  </div>
+</h1>
+
 <div class="container">
   <div class="row ia_repositories">
-    <app-cards></app-cards>
+    <div id="ia_list">
+      <app-cards></app-cards>
+    </div>
+    <div id="ia_search">
+      <ngx-masonry>
+        <ngxMasonryItem class="masonry-item ia_repository" *ngFor="let repository of repositories" routerLink="/details/{{repository.id}}">
+          <a routerLink="{{repository.html_url}}"><span class="ia_ico_details"></span></a>
+          <img class="ia_avatar" src="{{repository.owner.avatar_url}}" alt="{{repository.owner.login}}"/>
+          <div class="ia_card">
+            <div class="ia_name">{{repository.name}}</div>
+            <div class="ia_owner">{{repository.owner.login}}</div>
+            <div class="ia_description">{{repository.description}}</div>
+          </div>
+       </ngxMasonryItem>
+      </ngx-masonry>
+    </div>
   </div>
 </div>
